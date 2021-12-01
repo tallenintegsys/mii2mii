@@ -1,0 +1,89 @@
+﻿This board is equipped with 70 user IO pins that can be used for various custom
+applications. Pin assignments are available in the tables below.
+
+HEADER P1
+Header Pin No.	Pin description 			Spartan-6 (XC6SLX9 TQG144)	Pin No.
+1				VCCIO						NA
+2				GND							NA
+3				IO_L1P_3					35
+4				IO_L1N_VREF_3				34
+5				IO_L2P_3					33
+6				IO_L2N_3					32
+7				IO_L36P_3					30
+8				IO_L36N_3					29
+9				IO_L37P_3					27
+10				IO_L37N_3					26
+11				IO_L41P_GCLK27_3			24
+12				IO_L41N_GCLK26_3			23
+13				IO_L42P_GCLK25_TRDY2_3		22
+14				IO_L42N_GCLK24_3			21		(mii_clk)
+15				IO_L43P_GCLK23_3			17
+16				IO_L43N_GCLK22_IRDY2_3		16
+17				IO_L44P_GCLK21_3			15
+18				IO_L44N_GCLK20_3			14
+19				IO_L49P_3					12
+20				IO_L49N_3					11
+21				IO_L50P_3					10
+22				IO_L50N_3					9
+23				IO_L51P_3					8
+24				IO_L51N_3					7
+25				IO_L52P_3					6
+26				IO_L52N_3					5
+27				IO_L83P_3					2
+28				IO_L83N_VREF_3				1
+29				IO_L2P_0					142		(mii_d2)
+30				IO_L2N_0					141		(mii_d1)
+31				IO_L3P_0					140		(mii_d0)
+32				IO_L3N_0					139		(mii_en)
+33				IO_L4P_0					138		(serial TX)
+34				IO_L4N_0					137		(mii_d3)
+35				IO_L34P_GCLK19_0			134
+36				IO_L34N_GCLK18_0			133
+37				IO_L35P_GCLK17_0			132
+38				IO_L35N_GCLK16_0			131
+39				VCCIO						NA
+40				GND							NA
+
+HEADER P2
+Header Pin No.	Pin description 			Spartan-6(XC6SLX9 TQG144) Pin No.
+1				GND							NA
+2				VCCIO						NA
+3				IO_L62N_D6_2				43
+4				IO_L62P_D5_2				44
+5				IO_L49N_D4_2				45
+6				IO_L49P_D3_2				46
+7				IO_L48N_RDWR_B_VREF_2		47
+8				IO_L48P_D7_2				48
+9				IO_L31N_GCLK30_D15_2		50
+10				IO_L31P_GCLK31_D14_2		51
+11				IO_L30N_GCLK0_USERCCLK_2	55
+12				IO_L30P_GCLK1_D13_2			56
+13				IO_L74N_DOUT_BUSY_1			74
+14				IO_L74P_AWAKE_1				75
+15				IO_L47N_1					78
+16				IO_L47P_1					79
+17				IO_L46N_1					80
+18				IO_L46P_1					81
+19				GND							NA
+20				GND							NA
+21				IO_L45N_1					82
+22				IO_L45P_1					83
+23				IO_L43N_GCLK4_1				84
+24				IO_L43P_GCLK5_1				85
+25				IO_L42N_GCLK6_TRDY1_1		87
+26				IO_L42P_GCLK7_1				88
+27				IO_L41N_GCLK8_1				92
+28				IO_L41P_GCLK9_IRDY1_1		93
+29				IO_L40N_GCLK10_1			94
+30				IO_L40P_GCLK11_1			95
+31				IO_L34N_1					97
+32				IO_L34P_1					98
+33				IO_L33N_1					99
+34				IO_L33P_1					100
+35				IO_L32N_1					101
+36				IO_L32P_1					102
+37				IO_L1N_VREF_1				104
+38				IO_L1P_1					105
+39				GND							NA
+40				VCCIO						NA
+

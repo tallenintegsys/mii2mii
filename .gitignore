@@ -1,0 +1,6 @@
+*~
+#*
+iseconfig/
+synth/
+not_in_git/
+*.vcd

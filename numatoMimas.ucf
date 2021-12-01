@@ -1,0 +1,97 @@
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+# This file is a .ucf for Mimas (http://www.numato.com)                                               #
+# To use it in your project :                                                                         #
+# * Remove or comment the lines corresponding to unused pins in the project.                          #
+# * Rename the used signals according to the your project.                                            #
+# * For more detail refer to the User Guide available at http://numato.com/products/fpga-boards/      #
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#**************************************************************************************************************************************************#
+#                                            UCF for Mimas                                                                                         #
+#**************************************************************************************************************************************************#
+# Clock 100 MHz
+NET "clk" LOC = P126;
+NET "clk" TNM_NET = "clk";
+TIMESPEC TS_clk = PERIOD "clk" 100 MHz HIGH 50 %;
+###################################################################################################################################################
+#                                                 LEDs                                                                                            #
+###################################################################################################################################################
+NET "LED[0]" LOC = P119;
+NET "LED[0]" IOSTANDARD = LVCMOS33;
+NET "LED[0]" DRIVE = 8;
+NET "LED[0]" SLEW = FAST;
+NET "LED[1]" LOC = P118;
+NET "LED[1]" IOSTANDARD = LVCMOS33;
+NET "LED[1]" DRIVE = 8;
+NET "LED[1]" SLEW = FAST;
+NET "LED[2]" LOC = P117;
+NET "LED[2]" IOSTANDARD = LVCMOS33;
+NET "LED[2]" DRIVE = 8;
+NET "LED[2]" SLEW = FAST;
+NET "LED[3]" LOC = P116;
+NET "LED[3]" IOSTANDARD = LVCMOS33;
+NET "LED[3]" DRIVE = 8;
+NET "LED[3]" SLEW = FAST;
+NET "LED[4]" LOC = P115;
+NET "LED[4]" IOSTANDARD = LVCMOS33;
+NET "LED[4]" DRIVE = 8;
+NET "LED[4]" SLEW = FAST;
+NET "LED[5]" LOC = P114;
+NET "LED[5]" IOSTANDARD = LVCMOS33;
+NET "LED[5]" DRIVE = 8;
+NET "LED[5]" SLEW = FAST;
+NET "LED[6]" LOC = P112;
+NET "LED[6]" IOSTANDARD = LVCMOS33;
+NET "LED[6]" DRIVE = 8;
+NET "LED[6]" SLEW = FAST;
+NET "LED[7]" LOC = P111;
+NET "LED[7]" IOSTANDARD = LVCMOS33;
+NET "LED[7]" DRIVE = 8;
+NET "LED[7]" SLEW = FAST;
+###################################################################################################################################################
+#                                                Push Button Switches                                                                             #
+################################################################################################################################################### 
+NET "SW0" LOC = P124;
+NET "SW0" IOSTANDARD = LVCMOS33;
+NET "SW0" DRIVE = 8;
+NET "SW0" SLEW = FAST;
+NET "SW0" PULLUP;
+#NET "SW1"				LOC = P123 | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST | PULLUP;
+#NET "SW2"				LOC = P121 | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST | PULLUP;
+#NET "SW3"				LOC = P120 | IOSTANDARD = LVCMOS33 | DRIVE = 8 | SLEW = FAST | PULLUP;
+###################################################################################################################################################
+#                                                   HEADER P1                                                                                     #
+###################################################################################################################################################
+NET "mii0_clk" LOC = P21;
+NET "mii0_clk" IOSTANDARD = LVCMOS33;
+NET "mii0_clk" DRIVE = 8;
+NET "mii0_clk" SLEW = FAST;
+
+NET "uart_tx_serial" LOC = P138;
+NET "uart_tx_serial" IOSTANDARD = LVCMOS33;
+NET "uart_tx_serial" DRIVE = 8;
+NET "uart_tx_serial" SLEW = FAST;
+
+NET "mii0_en" LOC = P139;
+NET "mii0_en" IOSTANDARD = LVCMOS33;
+NET "mii0_en" DRIVE = 8;
+NET "mii0_en" SLEW = FAST;
+
+NET "mii0_d[0]" LOC = P140;
+NET "mii0_d[0]" IOSTANDARD = LVCMOS33;
+NET "mii0_d[0]" DRIVE = 8;
+NET "mii0_d[0]" SLEW = FAST;
+
+NET "mii0_d[1]" LOC = P141;
+NET "mii0_d[1]" IOSTANDARD = LVCMOS33;
+NET "mii0_d[1]" DRIVE = 8;
+NET "mii0_d[1]" SLEW = FAST;
+
+NET "mii0_d[2]" LOC = P142;
+NET "mii0_d[2]" IOSTANDARD = LVCMOS33;
+NET "mii0_d[2]" DRIVE = 8;
+NET "mii0_d[2]" SLEW = FAST;
+
+NET "mii0_d[3]" LOC = P137;
+NET "mii0_d[3]" IOSTANDARD = LVCMOS33;
+NET "mii0_d[3]" DRIVE = 8;
+NET "mii0_d[3]" SLEW = FAST;
