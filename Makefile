@@ -1,12 +1,14 @@
 VFLAGS= -Wall -g2005
 
+default: mii2mii
+
 mii: verilog/mii_tb.v verilog/mii.v
 	iverilog $(VFLAGS) -Iverilog -o $@ $^
 	@./$@
 	@rm $@
 
 
-mii2mii: verilog/mii2mii_top_tb.v verilog/mii2mii_top.v verilog/mii.v
+mii2mii: verilog/mii2mii_top_tb.v verilog/mii2mii_top.v
 	iverilog $(VFLAGS) -Iverilog -o $@ $^
 	@./$@
 	@rm $@

@@ -22,61 +22,49 @@
 module mii2mii (
 	input		clk,
 	input		SW0,
-	input		uart_rx_serial,
-	output		uart_tx_serial,
-	output 		[7:0]LED,
-	input		mii0_en,
-	input		mii0_clk,
-	input		[3:0]mii0_d
+	output 		[7:0] LED,
+	// mii in
+	input		miiI_clk,
+	input		miiI_en,
+	input		[3:0] miiI_d,
+	// mii out
+	input		miiO_clk,
+	output reg	miiO_en,
+	output reg	[3:0] miiO_d
 );
 
 `ifdef __ICARUS__
 wire reset = 0;
 `endif
-wire mii0_rdy;
-reg rdy_i = 0; // rdy inhibit
-reg [7:0] uart_d = 0;
-reg uart_dv = 0;
-wire uart_active;
-reg [7:0] fifo [0:127];
+reg [3:0] fifo [0:127];
 reg [7:0] inptr = 0;
 reg [7:0] outptr = 0;
 
 assign reset = ~SW0;
-assign LED = {error};
+assign LED = {miiO_en};
 
 always @(posedge clk) begin
 	if (reset) begin
-		rdy_i <= 0;
 		inptr <= 0;
 		outptr <= 0;
 	end else begin
-		if (rdy) begin
-			if (!rdy_i) begin
-				fifo[inptr] <= d;
-				inptr <= inptr + 1;
-				rdy_i <= 1;
-			end
-		end else begin
-			if (!uart_active && !uart_dv && (inptr != outptr)) begin
-			uart_d <= fifo[outptr];
-			outptr <= outptr + 1;
-			uart_dv <= 1;
-		end else begin
-			uart_dv <= 0;
-		end
-			rdy_i <= 0;
-		end
 	end
 end
 
-mii mii0 (
-	.reset(reset),
-	.rdy(mii0_rdy),
-	.q(mii0_q),
-	// MII interface
-	.mii_clk(mii0_clk),
-	.mii_en(mii0_en),
-	.mii_d(mii0_d));
+always @(posedge miiI_clk) begin
+	if (miiI_en) begin
+		fifo[inptr] <= miiI_d;
+		inptr <= inptr + 1'd1;
+	end
+end // always
 
+always @(posedge miiO_clk) begin
+	if (inptr != outptr) begin
+		miiO_d <= fifo[outptr];
+		outptr <= outptr + 1'd1;
+		miiO_en <= 1'd1;
+	end else begin
+		miiO_en <= 0;
+	end
+end // always
 endmodule
